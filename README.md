@@ -1,73 +1,52 @@
-# Welcome to your Lovable project
+# 🏋️‍♂️ Fitness Hub Blog
 
-## Project info
+Welcome to **Fitness Hub**, your trusted source for science-backed fitness, nutrition, and wellness content — designed to help you become the healthiest version of yourself.
 
-**URL**: https://lovable.dev/projects/7e6e0043-0037-4df5-941c-93a873e464e9
+---
 
-## How can I edit this code?
+## 🧭 About Fitness Hub
 
-There are several ways of editing your application.
+At **Fitness Hub**, we're on a mission to make fitness **accessible**, **enjoyable**, and **effective** for **everyone**. Whether you're a complete beginner or an experienced athlete, our goal is to guide you with reliable, practical advice that works in real life — not just on paper.
 
-**Use Lovable**
+Our team of **expert trainers**, **certified nutritionists**, and **wellness professionals** regularly share:
+- Proven workout plans  
+- Real-world nutrition tips  
+- Lifestyle and habit-building strategies  
+- Research-backed articles for sustainable progress  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7e6e0043-0037-4df5-941c-93a873e464e9) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎯 Our Mission
 
-**Use your preferred IDE**
+We believe **everyone deserves access to high-quality fitness guidance**. No gimmicks. No fluff. Just clear, actionable advice rooted in the latest research and delivered with care.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Whether you're:
+- Starting your fitness journey  
+- Looking to level up your routine  
+- Searching for clarity in a noisy world of trends  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+…**we're here to support you** every step of the way.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📚 Content You Can Trust
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+All our content is:
+- Created by **certified professionals**
+- Regularly updated to reflect **current science**
+- Tailored to different goals and fitness levels  
+- Focused on **real results** in everyday life
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🚀 Ready to Start Your Journey?
 
-**Edit a file directly in GitHub**
+Have questions or want to learn more about our programs?
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Explore the blog, connect with our team, and take the next step toward a healthier, stronger you.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 👨‍💻 About the Creator
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7e6e0043-0037-4df5-941c-93a873e464e9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This blog is part of a portfolio project by [**Younes Ouba**](https://younes-ouba-portfolio.vercel.app/), a passionate web developer with a love for health, fitness, and digital solutions that make lives better.
