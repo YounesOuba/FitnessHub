@@ -1,19 +1,17 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom'; // ✅ Add Link import
 
 const AboutPage = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []); // ✅ Add dependency array to run once on mount
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-[#212121]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,12 +60,12 @@ const AboutPage = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Have questions or want to learn more about our programs? We're here to help!
             </p>
-            <a 
-              href="/contact" 
+            <Link
+              to="/contact"
               className="inline-flex items-center px-6 py-3 rounded-lg bg-[#cfff6a] text-[#212121] font-semibold hover:brightness-110 transition-all"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       </section>

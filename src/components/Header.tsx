@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from "../assets/Logo/HUB.png";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { CATEGORIES } from '@/lib/constants';
 
 import {
@@ -16,9 +16,10 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleCategoryClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, label: string) => {
+  const handleCategoryClick = (e: React.MouseEvent, href: string, label: string) => {
     e.preventDefault();
     navigate(`/category/${label}`);
+    setIsMenuOpen(false); // Close mobile menu on click
   };
 
   return (
@@ -26,17 +27,17 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="/" className="flex w-auto items-center group">
+          <Link to="/" className="flex w-auto items-center group">
             <img
               src={Logo}
               alt="Fitness Hub Logo"
               className="w-auto h-24 transition-transform"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="/" className="nav-link">Home</a>
+            <Link to="/" className="nav-link">Home</Link>
 
             {/* Workouts Dropdown */}
             <DropdownMenu>
@@ -47,13 +48,12 @@ const Header = () => {
               <DropdownMenuContent className="bg-[#212121] border border-border shadow-lg">
                 {CATEGORIES.workouts.map((category) => (
                   <DropdownMenuItem key={category.href} asChild>
-                    <a
-                      href={category.href}
-                      onClick={(e) => handleCategoryClick(e, category.href, category.label)}
+                    <Link
+                      to={`/category/${category.label}`}
                       className="w-full cursor-pointer text-white hover:text-[#cfff6a] hover:bg-muted transition-colors duration-200"
                     >
                       {category.name}
-                    </a>
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -68,20 +68,19 @@ const Header = () => {
               <DropdownMenuContent className="bg-[#212121] border border-border shadow-lg">
                 {CATEGORIES.nutrition.map((category) => (
                   <DropdownMenuItem key={category.href} asChild>
-                    <a
-                      href={category.href}
-                      onClick={(e) => handleCategoryClick(e, category.href, category.label)}
+                    <Link
+                      to={`/category/${category.label}`}
                       className="w-full cursor-pointer text-white hover:text-[#cfff6a] hover:bg-muted transition-colors duration-200"
                     >
                       {category.name}
-                    </a>
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="/about" className="nav-link">About</a>
-            <a href="/contact" className="nav-link">Contact</a>
+            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -103,38 +102,38 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border mt-2 pt-4 pb-4">
             <div className="flex flex-col space-y-3">
-              <a href="/" className="nav-link py-2">Home</a>
+              <Link to="/" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
 
               <div className="py-2">
                 <div className="font-medium text-white mb-2">Workouts</div>
                 {CATEGORIES.workouts.map((category) => (
-                  <a
+                  <Link
                     key={category.href}
-                    href={category.href}
-                    onClick={(e) => handleCategoryClick(e, category.href, category.label)}
+                    to={`/category/${category.label}`}
+                    onClick={() => setIsMenuOpen(false)}
                     className="block py-1 pl-4 text-white hover:text-[#cfff6a] transition-colors"
                   >
                     {category.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               <div className="py-2">
                 <div className="font-medium text-white mb-2">Nutrition</div>
                 {CATEGORIES.nutrition.map((category) => (
-                  <a
+                  <Link
                     key={category.href}
-                    href={category.href}
-                    onClick={(e) => handleCategoryClick(e, category.href, category.label)}
+                    to={`/category/${category.label}`}
+                    onClick={() => setIsMenuOpen(false)}
                     className="block py-1 pl-4 text-white hover:text-[#cfff6a] transition-colors"
                   >
                     {category.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
-              <a href="/about" className="nav-link py-2">About</a>
-              <a href="/contact" className="nav-link py-2">Contact</a>
+              <Link to="/about" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
+              <Link to="/contact" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             </div>
           </div>
         )}
