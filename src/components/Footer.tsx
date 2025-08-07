@@ -12,16 +12,19 @@ const socialLinks = [
     name: 'Facebook',
     icon: Facebook,
     href: `https://www.facebook.com/sharer/sharer.php?u=${blogURL}`,
+    colorClass: 'hover:bg-[#1877F2]', // Facebook blue
   },
   {
     name: 'Twitter',
     icon: Twitter,
     href: `https://twitter.com/intent/tweet?url=${blogURL}&text=${shareText}`,
+    colorClass: 'hover:bg-[#1DA1F2]', // Twitter blue
   },
   {
     name: 'LinkedIn',
     icon: Linkedin,
     href: `https://www.linkedin.com/shareArticle?mini=true&url=${blogURL}&title=${shareText}`,
+    colorClass: 'hover:bg-[#0A66C2]', // LinkedIn blue
   },
   {
     name: 'WhatsApp',
@@ -36,8 +39,10 @@ const socialLinks = [
       </svg>
     ),
     href: `https://api.whatsapp.com/send?text=${shareText}%20${blogURL}`,
+    colorClass: 'hover:bg-[#25D366]', // WhatsApp green
   },
 ];
+
 
 // Email validation regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -88,7 +93,9 @@ const Footer = () => {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-2 rounded-lg bg-white/10 transition duration-300 ${social.colorClass}`}
                     aria-label={social.name}
                   >
                     <Icon className="h-5 w-5" />
