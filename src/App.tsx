@@ -12,6 +12,7 @@ import BeginnerGuidePage from "./pages/BeginnerGuidePage";
 import WorkoutsPage from "./pages/WorkoutsPage";
 import AllArticlesPage from "./pages/AllArticlesPage";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/next"
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <Analytics />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
