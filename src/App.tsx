@@ -12,7 +12,7 @@ import BeginnerGuidePage from "./pages/BeginnerGuidePage";
 import WorkoutsPage from "./pages/WorkoutsPage";
 import AllArticlesPage from "./pages/AllArticlesPage";
 import NotFound from "./pages/NotFound";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
