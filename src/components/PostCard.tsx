@@ -2,6 +2,7 @@
 import { Calendar, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { CategoryLabel } from '@/lib/constants';
+
 function getFirstParagraph(html: string) {
   const match = html.match(/<p[\s\S]*?>[\s\S]*?<\/p>/i);
   if (match) return match[0];
@@ -13,7 +14,7 @@ function getFirstParagraph(html: string) {
 interface PostCardProps {
   title: string;
   content: string;
-  date: string;
+  publishedAt: string;
   readTime: string;
   image: string;
   categories: CategoryLabel[];
@@ -23,7 +24,7 @@ interface PostCardProps {
 const PostCard = ({
   title,
   content,
-  date,
+  publishedAt,
   readTime,
   image,
   categories,
@@ -60,7 +61,7 @@ const PostCard = ({
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
-              <span>{date}</span>
+              <span>{publishedAt ? new Date(publishedAt).toLocaleDateString() : ''}</span>
             </div>
           </div>
           <div className="flex items-center gap-1">
